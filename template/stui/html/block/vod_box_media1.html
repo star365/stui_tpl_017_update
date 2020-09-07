@@ -1,0 +1,12 @@
+<li {if condition="$key gt 1"}class="top-line-dot"{/if}>
+	<div class="thumb">
+		<a class="stui-vodlist__thumb" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" style="width: 33.5px; background-image: url({:mac_url_img($vo.vod_pic)});"></a>
+	</div>
+	<div class="detail detail-side" style="padding-top: 5px;">
+		<p class="margin-0"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name|mac_substring=8}</a></p>	
+		<div class="score">	
+			<div class="star"><span class="star-cur" id="score"></span></div>
+			<span class="branch">{$vo.vod_score}</span>																
+		</div>
+	</div>																										
+</li>

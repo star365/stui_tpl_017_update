@@ -1,0 +1,93 @@
+<div class="myui-foot clearfix">
+
+	<div class="container min">
+
+		<div class="row">
+
+			<div class="col-pd text-center">
+
+				<p>本网站只提供web页面服务，并不提供资源存储，也不参与录制、上传<br>若本站收录的节目无意侵犯了贵司版权，请发邮件至{$maccms.site_email} （我们会在3个工作日内删除侵权内容，谢谢。）</p>		
+
+				<p class="hidden-xs">
+
+				<a target="_blank" href="{:mac_url('map/index')}">网站地图</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/index')}">RSS订阅</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/baidu')}">百度蜘蛛</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/google')}">谷歌地图</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/bing')}">必应地图</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/360')}">360地图</a><span class="split-line"></span>
+
+					<a target="_blank" href="{:mac_url('rss/sogou')}">搜狗地图</a>
+
+				</p>	
+
+				<p class="margin-0">© 2019 {$maccms.site_name}  {$maccms.site_icp}		</p>	
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<ul class="stui-extra clearfix">
+	<li>
+		<a class="backtop" href="javascript:scroll(0,0)" style="display: none;"><i class="icon iconfont icon-less"></i></a>
+	</li>
+	<li class="hidden-xs">
+		<a class="copylink" href="javascript:;"><i class="icon iconfont icon-share"></i></a>
+	</li>
+	<li class="visible-xs">
+		<a class="open-share" href="javascript:;"><i class="icon iconfont icon-share"></i></a>
+	</li>
+	<li class="hidden-xs">
+		<span><i class="icon iconfont icon-qrcode"></i></span>
+		<div class="sideslip">
+			<div class="col-pd">
+				<p id="qrcode"></p>
+				<p class="text-center font-12">扫码用手机访问</p>
+			</div>			
+		</div>
+	</li>
+	<li>
+		<a href="{:mac_url('gbook/index')}"><i class="icon iconfont icon-comments"></i></a>
+	</li>
+</ul>
+<div style="padding-bottom: 40px;" class="xs-block">
+<div class="myui-nav__tabbar">
+		<a class="item" href="/index.php/vod/type/id/1.html">
+		<img class="icon-img" src="/statics/icon/icon_1.png"><p class="title">电影</p>
+		</a>
+		<a class="item" href="/index.php/vod/type/id/2.html">
+		<img class="icon-img" src="/statics/icon/icon_2.png"><p class="title">剧集</p>
+		</a>
+		<a class="item" href="/index.php/vod/type/id/3.html">
+		<img class="icon-img" src="/statics/icon/icon_3.png"><p class="title">综艺</p>
+		</a>
+		<a class="item" href="/index.php/vod/type/id/4.html">
+		<img class="icon-img" src="/statics/icon/icon_4.png"><p class="title">动漫</p>
+		</a>
+		<a class="item" href="/index.php/topic">
+		<img class="icon-img" src="/statics/icon/icon_5.png"><p class="title">专题</p>
+		</a>
+		<a class="item" href="/index.php/actor">
+		<img class="icon-img" src="/statics/icon/icon_6.png"><p class="title">明星</p>
+		</a>
+	</div>
+</div>
+
+
+<div class="hide">{$maccms.site_tj}</div>
+<script type="text/javascript"> 
+	$(".score").each(function(){
+		var star = $(this).find(".branch").text().replace(".", "0.");
+		$(this).find("#score").css("width",""+star+"%");
+	});
+</script>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/template/stui_tpl/html/actor/style.css" type="text/css" />
+<title>明星库-{$maccms.site_name}</title>
+
+<meta name="keywords" content="{$maccms.site_keywords}" />
+
+<meta name="description" content="{$maccms.site_description}" />
+
+	{include file="block/include"}
+</head>
+
+<body>
+
+
+
+	
+
+	{include file="block/head"}
+
+
+
+
+
+
+
+	    <div class="container">
+
+	        <div class="row"> 
+
+	        	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="myui-panel myui-panel-bg clearfix">
+
+	<div class="myui-panel-box clearfix">
+
+		<div class="myui-panel_hd actor-padding">
+
+			<div class="myui-panel__head clearfix">
+
+				<h3 class="title">
+
+					荧屏巨星
+
+				</h3>	
+
+						</div>
+
+		</div>
+
+		<div class="myui-panel_bd">
+
+			<ul class="myui-vodlist__bd clearfix">
+
+				      {maccms:actor num="10"  order="desc" by="time"}
+
+				<li class="col-lg-10 col-md-6 col-sm-4 col-xs-3 {if condition="$key gt 9"}hidden-xs{/if}">
+
+				<div class="myui-vodlist__box">
+
+			<a class="myui-vodlist__thumb actor lazyload" href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"><span class="pic-text text-right">
+
+		演员</span>
+
+	</a>									
+
+	<div class="myui-vodlist__detail">
+
+		<h4 class="title text-overflow text-center"><a href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+
+	</div>										
+
+</div>
+
+				</li>
+
+					     {/maccms:actor}
+
+							</ul>
+
+		</div>	
+
+		
+
+	</div>						
+
+</div>
+
+
+
+
+
+	        
+
+
+
+	
+
+
+
+
+
+
+
+
+
+{include file="actor/inlist"}
+
+        	
+
+	        
+
+	        	
+
+	        	
+
+	        </div>
+
+	    </div>
+
+	    
+
+		
+
+
+
+	{include file="block/foot"}
+
+
+
+		
+
+				
+
+	</body>
+
+</html>

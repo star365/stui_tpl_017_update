@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>最新更新-{$maccms.site_name}</title>
+    <meta name="keywords" content="最新更新,{$maccms.site_name}" />
+    <meta name="description" content="最新更新100部影视,{$maccms.site_name}" /> 
+{include file="block/include"}
+</head>
+<body>
+
+		{include file="block/head"}
+    <div class="container">
+
+        <div class="row">
+     
+   <div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+      <div class="myui-panel_bd">
+
+        <h3 class="title">最近更新50条</h3>
+
+      </div>
+      <div class="myui-panel_bd">
+       <ul class="myui-vodlist__text striped col-pd clearfix">
+        <li class="striped-head clearfix"><span class="col-md-wide-3 col-sm-wide-35 col-xs-wide-7">名称</span><span class="col-md-wide-10 col-sm-wide-10 hidden-xs text-center">类型</span><span class="col-md-wide-5 col-sm-wide-4 hidden-xs text-center">主演</span><span class="col-md-wide-10 col-sm-wide-15 col-xs-wide-3 text-right">时间</span></li>
+	{maccms:vod num="50" type="all" order="desc" by="time"}
+        <li class=" clearfix">
+<span class="col-md-wide-3 col-sm-wide-35 col-xs-wide-7"><a class="clearfix" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></span>
+<span class="text-muted col-md-wide-10 col-sm-wide-10 hidden-xs text-center">{$vo.type.type_name}</span>
+<span class="text-muted col-md-wide-5 col-sm-wide-4 hidden-xs text-center">{$vo.vod_actor|mac_substring=40}</span>
+<span class="text-muted col-md-wide-10 col-sm-wide-15 col-xs-wide-3 text-right">{$vo.vod_time|date='Y-m-d',###}</span>
+</li>
+     	{/maccms:vod}	
+      
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+		{include file="block/foot"}
+
+</body>
+</html>
+

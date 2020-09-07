@@ -1,0 +1,174 @@
+<!--热播推荐-->
+		<div class="stui-pannel clearfix">		
+	<div class="stui-pannel-box padding-0">
+		<div class="col-xs-1 padding-0">
+			<div class="col-pd stui-pannel-bg">													
+				<div class="stui-pannel_hd">
+					<div class="stui-pannel__head bottom-line active clearfix">
+						<h3 class="title">
+							<img src="{$maccms.path}statics/icon/icon_12.png"/>
+							<a href="{:mac_url_type($vo1,[],'show')}">热播推荐</a>
+						</h3>						
+                     <span class="pull-right more">
+                       <a href="javascript:void(0)" onclick="javascript:divrefresh();">
+                          <img src="{$maccms.path}statics/icon/icon_hyh.png"/>
+                         换一换
+                       </a>
+                      </span>
+					</div>																		
+				</div>
+				
+              <div class="stui-pannel_bd clearfix" style="display:block;" id="movie1">	
+					<ul class="stui-vodlist clearfix">
+						{maccms:vod num="6" paging="no"  order="desc" by="time" level="4"}
+				<li class="col-md-6 col-sm-3 col-xs-3">
+					{include file="block/vod_box"}												
+				</li>
+				{/maccms:vod}	 
+					</ul>															
+				</div>	
+              
+                <div class="stui-pannel_bd clearfix" style="display:none;" id="movie2">	
+					<ul class="stui-vodlist clearfix">
+						{maccms:vod num="6" paging="no"  order="asc" by="time" level="4"}
+				<li class="col-md-6 col-sm-3 col-xs-3">
+					{include file="block/vod_box"}												
+				</li>
+				{/maccms:vod}	 
+					</ul>															
+				</div>	
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!--分类-->
+{maccms:type ids="parent" order="asc" by="sort" id="vo1" key="key1" flag="vod"}
+<div class="stui-pannel clearfix">		
+	<div class="stui-pannel-box padding-0">
+		<div class="col-lg-wide-8 col-xs-1 padding-0">
+			<div class="col-pd stui-pannel-bg">													
+				<div class="stui-pannel_hd">
+					<div class="stui-pannel__head bottom-line active clearfix">
+						<a class="more text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="icon iconfont icon-more"></i></a>
+						<h3 class="title">
+							<img src="{$maccms.path}statics/icon/icon_{$vo1.type_id}.png"/>
+							<a href="{:mac_url_type($vo1,[],'show')}">{$vo1.type_name}</a>
+						</h3>						
+						<ul class="nav nav-text pull-right hidden-sm hidden-xs">
+							{maccms:type parent="'.$vo1['type_id'].'" order="asc" by="sort" id="vo2" key="key2" num="8"}
+		                    <li><a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a> <span class="split-line"></span></li>
+		                    {/maccms:type}
+						</ul>													
+					</div>																		
+				</div>
+				<div class="stui-pannel_bd clearfix">	
+					<ul class="stui-vodlist clearfix">
+						{maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="time"}
+						<li class="col-md-5 col-sm-4 col-xs-3 {if condition="$key gt 10"}hidden-lg hidden-md{/if}  {if condition="$key gt 4"}hidden-xs{/if}">
+							{include file="block/vod_box"}												
+						</li>
+						{/maccms:vod}	 
+					</ul>															
+				</div>	
+			</div>
+		</div>	
+		<div class="col-lg-wide-2 stui-pannel-side hidden-md hidden-sm hidden-xs">	
+			<div class="col-pd stui-pannel-bg clearfix">												
+				<div class="stui-pannel_hd">
+					<div class="stui-pannel__head bottom-line active clearfix">
+                      <a class="more text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="icon iconfont icon-more"></i></a>
+						<h3 class="title">
+							本周热门{$vo1.type_name}
+						</h3>													
+					</div>																		
+				</div>
+				<div class="stui-pannel_bd">																			
+					<ul class="stui-vodlist__media active col-pd clearfix">
+						{maccms:vod num="9" type="'.$vo1['type_id'].'" order="desc" by="hitsweek"}
+							{include file="block/vod_box_media1"}	
+						{/maccms:vod}
+					</ul>										
+				</div>	
+			</div>					
+		</div>
+	</div>
+</div>
+{/maccms:type}
+
+<!--专题-->
+<div class="stui-pannel clearfix">
+			<div class="stui-pannel-box padding-0">
+				<div class="col-xs-1 padding-0">
+					<div class="col-pd stui-pannel-bg">
+						<div class="stui-pannel_hd">
+							<div class="stui-pannel__head bottom-line active clearfix">
+                              <a class="more text-muted pull-right" href="{:mac_url_topic_index($vo)}">更多 <i class="icon iconfont icon-more"></i></a>
+								<h3 class="title">
+							<img src="{$maccms.path}statics/icon/icon_5.png"/>
+							<a href="{:mac_url_topic_index($vo)}">专题</a>
+						</h3>
+							</div>
+						</div>
+
+						<div class="stui-pannel_bd">
+							<ul class="stui-vodlist clearfix">								
+								{maccms:topic num="4" paging="yes" order="desc" by="time"}
+								<li class="col-md-4 col-sm-2 col-xs-2">
+									<div class="stui-vodlist__box">
+										<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{:mac_url_img($vo.topic_pic)}" style=" padding-top: 50%;" >						
+											<span class="play hidden-xs"></span>								
+										</a>
+										<div class="stui-vodlist__detail">
+											<h4 class="title text-center text-overflow"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+											<p class="text text-center text-overflow text-muted hidden-xs">—— {$vo.topic_rel_vod|explode=',',###|count}个影片 ——</p>
+										</div>										
+									</div>									
+								</li>
+								{/maccms:topic}
+							</ul>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+<!--资讯-->
+{maccms:type ids="5" order="asc" by="sort" id="vo1" key="key1"}
+	<div class="stui-pannel clearfix">
+			<div class="stui-pannel-box padding-0">
+				<div class="col-xs-1 padding-0">
+					<div class="col-pd stui-pannel-bg">
+						<div class="stui-pannel_hd">
+							<div class="stui-pannel__head bottom-line active clearfix">
+                              <a class="more text-muted pull-right" href="{:mac_url_type($vo1)}">更多 <i class="icon iconfont icon-more"></i></a>
+								<h3 class="title">
+							<img src="{$maccms.path}statics/icon/icon_29.png"/>
+							<a href="{:mac_url_type($vo1)}">资讯</a>
+						</h3>
+							</div>
+						</div>
+
+						<div class="stui-pannel_bd clearfix">
+							<ul class="stui-vodlist__media active col-pd clearfix">
+								{maccms:art num="8" paging="yes" type="current" order="desc" by="time"}
+								<li class="col-md-2 col-sm-1 col-xs-1 {if condition="$key gt 5"}hidden-xs{/if}">
+									<div class="thumb">
+										<a class="w-thumb stui-vodlist__thumb active lazyload" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" data-original="{:mac_url_img($vo.art_pic)}">
+										</a>
+									</div>
+									<div class="detail">
+										<h4 class="title"><a href="{:mac_url_art_detail($vo)}">{$vo.art_name}</a></h4>
+										<p class="margin-0 font-12"><span class="hidden-xs"><span class="text-muted">分类：</span>{$vo.art_class}<span class="split-line"></span></span><span class="text-muted">时间：</span>{$vo.art_time|date='Y-m-d',###}</p>
+									</div>
+								</li>
+								{/maccms:art}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{/maccms:type}

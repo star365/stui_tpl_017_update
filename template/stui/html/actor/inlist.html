@@ -1,0 +1,274 @@
+	<div class="myui-layout clearfix">
+						<div class="myui-layout-box col-lg-2 col-xs-1">
+
+				<div class="myui-panel active myui-panel-bg clearfix">	
+
+					<div class="myui-panel-box clearfix">	
+
+						<div class="myui-panel_hd">
+
+							<div class="myui-panel__head clearfix">
+
+								<h3 class="title">
+
+									内地明星
+
+								</h3>	
+								<a class="more text-muted pull-right" href="{:mac_url('actor/show',['area'=>'中国内地'])}">更多 <i class="icon iconfont icon-more"></i></a>
+
+							</div>																		
+
+						</div>
+
+
+
+						<div class="myui-panel_bd clearfix">																
+
+							<ul class="myui-vodlist clearfix">
+
+										  {maccms:actor num="10" area="中国内地" order="desc" by="time"}		
+
+								<li class="col-lg-5 col-md-6 col-sm-4 col-xs-3  {if condition="$key gt 9"}hidden-xs{/if}">
+
+									<div class="myui-vodlist__box">
+
+			<a class="myui-vodlist__thumb actor lazyload" href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"><span class="pic-text text-right">
+
+		演员</span>
+
+	</a>									
+
+	<div class="myui-vodlist__detail">
+
+		<h4 class="title text-overflow text-center"><a href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+
+	</div>										
+
+</div>												
+
+								</li>
+
+									     {/maccms:actor}						
+
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+					<div class="myui-layout-box col-lg-2 col-xs-1">
+
+				<div class="myui-panel active myui-panel-bg clearfix">	
+
+					<div class="myui-panel-box clearfix">	
+
+						<div class="myui-panel_hd">
+
+							<div class="myui-panel__head clearfix">
+
+								<h3 class="title">
+
+									港台明星
+
+								</h3>	
+
+								<a class="more text-muted pull-right" href="{:mac_url('actor/show',['area'=>'中国港台'])}">更多 <i class="icon iconfont icon-more"></i></a>
+
+							</div>																		
+
+						</div>
+
+
+
+						<div class="myui-panel_bd clearfix">																
+
+							<ul class="myui-vodlist clearfix">
+
+										  {maccms:actor num="10" area="中国港台" order="desc" by="time"}		
+
+								<li class="col-lg-5 col-md-6 col-sm-4 col-xs-3  {if condition="$key gt 9"}hidden-xs{/if}">
+
+									<div class="myui-vodlist__box">
+
+			<a class="myui-vodlist__thumb actor lazyload" href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"><span class="pic-text text-right">
+
+		演员</span>
+
+	</a>									
+
+	<div class="myui-vodlist__detail">
+
+		<h4 class="title text-overflow text-center"><a href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+
+	</div>										
+
+</div>												
+
+								</li>
+
+									     {/maccms:actor}						
+
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+			
+
+												<div class="myui-layout-box col-lg-2 col-xs-1">
+
+				<div class="myui-panel active myui-panel-bg clearfix">	
+
+					<div class="myui-panel-box clearfix">	
+
+						<div class="myui-panel_hd">
+
+							<div class="myui-panel__head clearfix">
+
+								<h3 class="title">
+
+									日本明星
+
+								</h3>	
+
+								<a class="more text-muted pull-right" href="{:mac_url('actor/show',['area'=>'日本'])}">更多 <i class="icon iconfont icon-more"></i></a>
+
+							</div>																		
+
+						</div>
+
+
+
+						<div class="myui-panel_bd clearfix">																
+
+							<ul class="myui-vodlist clearfix">
+
+										  {maccms:actor num="10" area="日本" order="desc" by="time"}		
+
+								<li class="col-lg-5 col-md-6 col-sm-4 col-xs-3  {if condition="$key gt 9"}hidden-xs{/if}">
+
+									<div class="myui-vodlist__box">
+
+			<a class="myui-vodlist__thumb actor lazyload" href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"><span class="pic-text text-right">
+
+		演员</span>
+
+	</a>									
+
+	<div class="myui-vodlist__detail">
+
+		<h4 class="title text-overflow text-center"><a href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+
+	</div>										
+
+</div>												
+
+								</li>
+
+									     {/maccms:actor}						
+
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+			
+
+			
+
+																		<div class="myui-layout-box col-lg-2 col-xs-1">
+
+				<div class="myui-panel active myui-panel-bg clearfix">	
+
+					<div class="myui-panel-box clearfix">	
+
+						<div class="myui-panel_hd">
+
+							<div class="myui-panel__head clearfix">
+
+								<h3 class="title">
+
+									美国明星
+
+								</h3>	
+
+								<a class="more text-muted pull-right" href="{:mac_url('actor/show',['area'=>'美国'])}">更多 <i class="icon iconfont icon-more"></i></a>
+
+							</div>																		
+
+						</div>
+
+
+
+						<div class="myui-panel_bd clearfix">																
+
+							<ul class="myui-vodlist clearfix">
+
+										  {maccms:actor num="10" area="美国" order="desc" by="time"}		
+
+								<li class="col-lg-5 col-md-6 col-sm-4 col-xs-3  {if condition="$key gt 9"}hidden-xs{/if}">
+
+									<div class="myui-vodlist__box">
+
+			<a class="myui-vodlist__thumb actor lazyload" href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"><span class="pic-text text-right">
+
+		演员</span>
+
+	</a>									
+
+	<div class="myui-vodlist__detail">
+
+		<h4 class="title text-overflow text-center"><a href="{$vo|mac_url_actor_detail}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+
+	</div>										
+
+</div>												
+
+								</li>
+
+									     {/maccms:actor}						
+
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+								
+
+			
+
+					</div>
+
+
+
+
+
+
+
